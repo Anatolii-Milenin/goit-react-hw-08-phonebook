@@ -1,15 +1,13 @@
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 import {
-  UsergroupAddOutlined,
+  UserAddOutlined,
   EditOutlined,
   PhoneOutlined,
   ContactsOutlined,
 } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
-import { fadeInLeftBig } from 'react-animations';
-import img from '../../img/exampleList.png';
 
-const fadeAnimation = keyframes`${fadeInLeftBig}`; // для анімації
+import img from '../../img/exampleList.png';
 
 export const Title = styled.h1`
   text-align: center;
@@ -65,46 +63,41 @@ export const Section = styled.section`
 `;
 
 export const HomeEdit = styled(EditOutlined)`
-  animation: 2.5s ${fadeAnimation};
   svg {
     color: #1677ff;
     width: 220px;
     display: block;
-    height: 220px;
+    height: 200px;
     margin: 0 auto;
   }
 `;
 
 export const HomePhoneIcon = styled(PhoneOutlined)`
-  animation: 2s ${fadeAnimation};
   svg {
     color: #1677ff;
     width: 220px;
     display: block;
-    height: 220px;
+    height: 200px;
     margin: 0 auto;
   }
 `;
 
-export const HomeUserGroup = styled(UsergroupAddOutlined)`
-  animation: 1.5s ${fadeAnimation};
+export const HomeUserGroup = styled(UserAddOutlined)`
   svg {
     color: #1677ff;
     display: block;
-    height: 220px;
+    height: 200px;
     margin: 0 auto;
-    width: 250px;
+    width: 220px;
   }
 `;
 
 export const HomeContactList = styled(ContactsOutlined)`
-  animation: 1s ${fadeAnimation};
-
   svg {
     color: #1677ff;
     width: 220px;
     display: block;
-    height: 220px;
+    height: 200px;
     margin: 0 auto;
   }
 `;

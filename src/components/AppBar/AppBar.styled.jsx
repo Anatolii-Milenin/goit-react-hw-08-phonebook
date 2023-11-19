@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 import {
-  IssuesCloseOutlined,
+  FormOutlined,
   LoginOutlined,
   HomeOutlined,
   ContactsOutlined,
@@ -30,12 +30,12 @@ export const Link = styled(NavLink)`
   padding: 11px 4px;
 `;
 
-export const RegIcon = styled(IssuesCloseOutlined)`
-  margin-right: 8px;
+export const RegIcon = styled(FormOutlined)`
+  margin-left: 8px;
 `;
 
 export const LogInIcon = styled(LoginOutlined)`
-  margin-right: 8px;
+  margin-left: 8px;
 `;
 
 export const HomeIcon = styled(HomeOutlined)`

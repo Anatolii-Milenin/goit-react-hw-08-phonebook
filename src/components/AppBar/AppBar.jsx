@@ -39,12 +39,12 @@ export const AppBar = () => {
             ) : (
               <>
                 <Link to="/register">
-                  <RegIcon />
                   Register
+                  <RegIcon />
                 </Link>
                 <Link to="/login">
-                  <LogInIcon />
                   Log in
+                  <LogInIcon />
                 </Link>
               </>
             )}
