@@ -8,25 +8,23 @@ import {
   HomeEdit,
   HomePhoneIcon,
   HomeContactList,
-} from './Home.styled'; // для стилів
+} from './Home.styled';
 
 import { useSelector } from 'react-redux';
 
 export default function Home() {
-  const { isLoaggedIn } = useSelector(state => state.auth); // для перевірки чи залогінений користувач
+  const { isLoaggedIn } = useSelector(state => state.auth);
 
   return (
     <Section>
       <Title>Wellcome to you PhoneBook</Title>
 
       <Wrap>
-        {' '}
         <HomeEdit /> <HomePhoneIcon />
         <HomeUserGroup />
         <HomeContactList />
       </Wrap>
 
-      {/* якщо користувач не залогінений, то виводимо підказку, якщо залогінений, також виводимо підказку */}
       {!isLoaggedIn ? (
         <UnderTitle>
           Please
@@ -45,5 +43,3 @@ export default function Home() {
     </Section>
   );
 }
-
-// Діма Берестень

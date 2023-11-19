@@ -24,10 +24,9 @@ export default function Register() {
   const onFinish = values => {
     const { name, email, password, confirm } = values;
 
-    // перевірка на співпадіння паролів перед відправкою на сервер
     if (password === confirm) {
-      dispatch(register({ name, email, password })); // для відправки даних на сервер
-      !isLoading && !error && form.resetFields(); // для очищення форми
+      dispatch(register({ name, email, password }));
+      !isLoading && !error && form.resetFields();
     }
   };
 
@@ -39,7 +38,7 @@ export default function Register() {
           name="register"
           onFinish={onFinish}
           initialValues={{
-            residence: ['zhejiang', 'hangzhou', 'xihu'], // початкові значення для селекта
+            residence: ['zhejiang', 'hangzhou', 'xihu'],
             prefix: '86',
           }}
           scrollToFirstError
@@ -103,7 +102,6 @@ export default function Register() {
                 message: 'Please confirm your password!',
               },
 
-              // перевірка на співпадіння паролів перед відправкою на сервер
               ({ getFieldValue }) => ({
                 validator(_, value) {
                   if (!value || getFieldValue('password') === value) {
@@ -122,13 +120,12 @@ export default function Register() {
           </Label>
 
           <Label>
-            {' '}
             <SubmitButton type="primary" htmlType="submit">
               Register
-            </SubmitButton>{' '}
+            </SubmitButton>
             <ContLabel>
               or <LinkToLog to="/login"> log in</LinkToLog>if you already have
-              an account{' '}
+              an account
             </ContLabel>
           </Label>
         </FormReg>
@@ -136,5 +133,3 @@ export default function Register() {
     </section>
   );
 }
-
-// Діма Берестень

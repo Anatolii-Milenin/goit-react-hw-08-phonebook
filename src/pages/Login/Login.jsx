@@ -18,8 +18,8 @@ export default function Login() {
   const dispatch = useDispatch();
 
   const onFinish = values => {
-    dispatch(loginization(values)); // для відправки даних на сервер
-    form.resetFields(); // для очищення форми
+    dispatch(loginization(values));
+    form.resetFields();
   };
 
   return (
@@ -33,7 +33,6 @@ export default function Login() {
           }}
           onFinish={onFinish}
         >
-          {' '}
           <TitleReg>Log in</TitleReg>
           <FormWrap.Item
             name="email"
@@ -75,5 +74,3 @@ export default function Login() {
     </section>
   );
 }
-
-// Діма Берестень

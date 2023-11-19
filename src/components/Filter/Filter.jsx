@@ -5,20 +5,18 @@ import { SearchOutlined } from '@ant-design/icons';
 
 export const Filter = () => {
   const dispatch = useDispatch();
-  const filter = useSelector(state => state.filter); // масив контактів
+  const filter = useSelector(state => state.filter);
 
   return (
     <WrapperFiler>
       <FilterP>Find contacts by name</FilterP>
 
       <FilterInput
-        prefix={<SearchOutlined />} // іконка
+        prefix={<SearchOutlined />}
         type="text"
         value={filter}
-        onChange={e => dispatch(filtration(e.target.value))} // фільтруємо контакти
+        onChange={e => dispatch(filtration(e.target.value))}
       />
     </WrapperFiler>
   );
 };
-
-// Діма Берестень

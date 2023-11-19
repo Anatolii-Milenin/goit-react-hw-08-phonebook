@@ -9,53 +9,47 @@ import {
   InputForm,
   AddModal,
   OpenAddModal,
-} from './ContactForm.styled'; // стилі
-import { PlusCircleOutlined } from '@ant-design/icons'; // іконки
+} from './ContactForm.styled';
+import { PlusCircleOutlined } from '@ant-design/icons';
 
 export const ContactForm = () => {
-  const [open, setOpen] = useState(false); // стейт для відкриття модалки
+  const [open, setOpen] = useState(false);
   const [form] = FormWrap.useForm();
-  const currentContacts = useSelector(state => state.contacts.items); // масив контактів
+  const currentContacts = useSelector(state => state.contacts.items);
   const loader = useSelector(state => state.contacts.isLoading);
   const dispatch = useDispatch();
 
   const showModal = () => {
-    form.resetFields(); // очищаємо форму
-    setOpen(true); // відкриваємо модалку
+    form.resetFields();
+    setOpen(true);
   };
 
   const submit = value => {
-    // форматуємо номер телефону
     const formatTel = () => {
       const number = value.number;
       const phoneLength = number.length;
 
-      // перевіряємо чи номер телефону відповідає формату
       if (phoneLength < 7) {
-        return `(${number.slice(0, 3)}) ${number.slice(3)}`; // якщо менше 7 то виводимо тільки перші 3 цифри
+        return `(${number.slice(0, 3)}) ${number.slice(3)}`;
       }
 
-      // якщо більше 7 то виводимо 3 цифри, потім 3 і потім 4
       return `(${number.slice(0, 3)}) ${number.slice(3, 6)}-${number.slice(
         6,
         10
       )}`;
     };
 
-    const newContact = { name: value.name, number: formatTel() }; // створюємо новий контакт
+    const newContact = { name: value.name, number: formatTel() };
     const newContactName = newContact.name.toLowerCase();
 
-    // перевіряємо чи такий контакт вже є в списку
     if (
       currentContacts.find(
         contact => contact.name.toLowerCase() === newContactName
       )
     ) {
-      alert(`${newContact.name} is already in contact`); // якщо є то виводимо повідомлення
+      alert(`${newContact.name} is already in contact`);
     } else {
-      dispatch(addContact(newContact)); // якщо немає то додаємо контакт
-
-      // якщо контакт додано то очищаємо форму і закриваємо модалку
+      dispatch(addContact(newContact));
       if (!loader) {
         form.resetFields();
         setOpen(false);
@@ -69,7 +63,7 @@ export const ContactForm = () => {
         type="primary"
         onClick={showModal}
         title="add new contact"
-        size={'large'} // розмір кнопки
+        size={'large'}
       >
         <PlusCircleOutlined />
         Add contact
@@ -134,5 +128,3 @@ export const ContactForm = () => {
     </>
   );
 };
-
-// Діма Берестень
