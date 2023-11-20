@@ -1,15 +1,13 @@
 import styled from 'styled-components';
 import {
   UserAddOutlined,
-  EditOutlined,
   PhoneOutlined,
   ContactsOutlined,
 } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
 
-import img from '../../img/exampleList.png';
-
 export const Title = styled.h1`
+  font-size: 50px;
   text-align: center;
   margin-bottom: 30px;
   color: #2e2d2dbc;
@@ -51,25 +49,14 @@ export const Section = styled.section`
   padding-top: 40px;
   height: 40em;
   background-image: linear-gradient(
-      90deg,
-      rgba(255, 255, 255, 0.96),
-      rgba(255, 255, 255, 0.97)
-    ),
-    url(${img});
+    90deg,
+    rgba(255, 255, 255, 0.96),
+    rgba(255, 255, 255, 0.97)
+  );
   border-radius: 1.1em;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-`;
-
-export const HomeEdit = styled(EditOutlined)`
-  svg {
-    color: #1677ff;
-    width: 220px;
-    display: block;
-    height: 200px;
-    margin: 0 auto;
-  }
 `;
 
 export const HomePhoneIcon = styled(PhoneOutlined)`

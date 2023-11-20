@@ -3,7 +3,7 @@ import {
   fetchContacts,
   deleteContact,
   addContact,
-  redactContatc,
+  redactContact,
 } from './operations';
 
 import { toast } from 'react-toastify';
@@ -26,7 +26,7 @@ const handleRejected = (state, action) => {
   );
 };
 
-const contactSlise = createSlice({
+const contactSlice = createSlice({
   name: 'contacts',
   initialState: {
     items: [],
@@ -63,8 +63,8 @@ const contactSlise = createSlice({
       })
       .addCase(addContact.rejected, handleRejected)
 
-      .addCase(redactContatc.pending, handlePending)
-      .addCase(redactContatc.fulfilled, (state, action) => {
+      .addCase(redactContact.pending, handlePending)
+      .addCase(redactContact.fulfilled, (state, action) => {
         const index = state.items.findIndex(
           task => task.id === action.payload.id
         );
@@ -73,7 +73,7 @@ const contactSlise = createSlice({
         state.isLoading = false;
         state.error = null;
       })
-      .addCase(redactContatc.rejected, handleRejected)
+      .addCase(redactContact.rejected, handleRejected)
       .addCase(logOut.fulfilled, state => {
         state.items = [];
         state.error = null;
@@ -82,4 +82,4 @@ const contactSlise = createSlice({
   },
 });
 
-export const contactsReduser = contactSlise.reducer;
+export const contactsReduser = contactSlice.reducer;

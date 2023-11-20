@@ -43,7 +43,7 @@ export default function Register() {
           }}
           scrollToFirstError
         >
-          <TitleReg>Register new user</TitleReg>
+          <TitleReg>Register</TitleReg>
           <Label
             name="name"
             label="Name"

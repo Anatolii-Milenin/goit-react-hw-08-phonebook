@@ -5,7 +5,6 @@ import {
   UnderTitle,
   HomeLink,
   Section,
-  HomeEdit,
   HomePhoneIcon,
   HomeContactList,
 } from './Home.styled';
@@ -17,10 +16,10 @@ export default function Home() {
 
   return (
     <Section>
-      <Title>Wellcome to you PhoneBook</Title>
+      <Title>Phone contact book</Title>
 
       <Wrap>
-        <HomeEdit /> <HomePhoneIcon />
+        <HomePhoneIcon />
         <HomeUserGroup />
         <HomeContactList />
       </Wrap>

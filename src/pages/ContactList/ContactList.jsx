@@ -18,7 +18,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import {
   deleteContact,
-  redactContatc,
+  redactContact,
   fetchContacts,
 } from 'Redux/Contacts/operations';
 
@@ -37,7 +37,7 @@ export default function Contactlist() {
 
   const handleOk = () => {
     setIsModalOpen(false);
-    dispatch(redactContatc({ id: subId, name: subName, number: subNumber }));
+    dispatch(redactContact({ id: subId, name: subName, number: subNumber }));
   };
 
   const showModal = (name, number, id) => {

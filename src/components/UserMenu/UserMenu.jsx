@@ -15,7 +15,7 @@ export const UserMenu = () => {
       <p>{email}</p>
       <Button type="primary" onClick={() => dispatch(logOut())}>
         <LogoutOutlined /> Log out
-      </Button>{' '}
+      </Button>
     </Wrap>
   );
 };
